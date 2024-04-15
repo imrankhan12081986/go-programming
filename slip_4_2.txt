@@ -1,0 +1,13 @@
+package main
+import (
+	"fmt"
+	"sort"
+)
+
+func main(){
+	arr := []int{9,1,6,5,7,3,8,2,4}
+
+	sort.Ints(arr)
+
+	fmt.Println("Array elements in ascending order:", arr)
+}

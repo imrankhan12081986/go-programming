@@ -1,0 +1,40 @@
+package main
+import (
+    "fmt"
+)
+func multiplyMatrices(matrix1 [][]int, matrix2 [][]int) [][]int {
+    rows1 := len(matrix1)
+    cols1 := len(matrix1[0])
+    rows2 := len(matrix2)
+    cols2 := len(matrix2[0])
+
+    if cols1 != rows2 {
+        fmt.Println("Cannot multiply matrices. Number of columns of the first matrix must be equal to the number of rows of the second matrix.")
+        return nil
+    }
+
+    result := make([][]int, rows1)
+    for i := range result {
+        result[i] = make([]int, cols2)
+    }
+
+    for i := 0; i < rows1; i++ {
+        for j := 0; j < cols2; j++ {
+            for k := 0; k < cols1; k++ {
+                result[i][j] += matrix1[i][k] * matrix2[k][j]
+            }
+        }
+    }
+    return result
+}
+func main() {
+    matrix1 := [][]int{{1, 2, 3}, {4, 5, 6}}
+    matrix2 := [][]int{{7, 8}, {9, 10}, {11, 12}}
+    result := multiplyMatrices(matrix1, matrix2)
+    if result != nil {
+        fmt.Println("Resultant matrix after multiplication:")
+        for _, row := range result {
+            fmt.Println(row)
+        }
+    }
+}

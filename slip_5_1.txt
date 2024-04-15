@@ -1,0 +1,24 @@
+package main
+import (
+	"fmt"
+	"os"
+)
+
+func main(){
+	file, err := os.Create("example.txt")
+	if err != nil {
+		fmt.Println("ERror:", err)
+		return
+	}
+	defer file.Close()
+
+	text := "SAHIL KAZI"
+	_, err = file.WriteString(text)
+	if err != nil {
+		fmt.Println("Error:", err)
+		return
+	}
+
+	fmt.Print("Text file created successfully.")
+
+}

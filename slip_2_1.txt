@@ -1,0 +1,26 @@
+package main
+import "fmt"
+
+func main(){
+	var num int
+	fmt.Println("Enter the number: ")
+	fmt.Scanln(&num)
+	n1 := 0
+	n2 := 1
+
+	fmt.Print(n1, "\t")
+
+	if 1 < num {
+
+	fmt.Print(n2 )
+
+	if num > 2 { 
+	for i := 1; i<= num-2; i++{
+		n3 := n1 + n2
+		fmt.Print("\t",n3)
+		n1 = n2
+		n2 = n3
+	}
+     }
+    }
+}

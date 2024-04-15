@@ -1,0 +1,18 @@
+package main
+
+import "fmt"
+
+func main(){
+	var sumEven, sumOdd int
+
+	for i := 1; i<=100; i++ {
+		if i%2 ==0{
+			sumEven += i
+		}else{
+			sumOdd += i
+		}
+	}
+
+	fmt.Println("Sum of all even number between 1 to 100:\n", sumEven)
+	fmt.Println("Sum of all odd number between 1 to 100:\n", sumOdd)
+}

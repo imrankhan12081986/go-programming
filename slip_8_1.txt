@@ -1,0 +1,40 @@
+package main
+import "fmt"
+
+type Book struct {
+	BookID int
+	Title string
+	Author string
+	Price float64
+}
+
+func main(){
+	var n int
+
+	fmt.Println("Enter the number of books")
+	fmt.Scanln(&n)
+
+	books := make([]Book, n)
+
+
+	for i := 0; i < n; i++{
+		fmt.Println("Book ID: ")
+		fmt.Scanln(&books[i].BookID)
+		fmt.Println("Title: ")
+		fmt.Scanln(&books[i].Title)
+		fmt.Println("Author: ")
+		fmt.Scanln(&books[i].Author)
+		fmt.Println("Price: ")
+		fmt.Scanln(&books[i].Price)
+	}
+
+	fmt.Println("\n Books Details: ")
+	for i, book := range books {
+		fmt.Printf("\n Books %d: \n", i+1)
+		fmt.Println("Book ID:", book.BookID)
+		fmt.Println("Title: ", book.Title)
+		fmt.Println("Author: ", book.Author)
+		fmt.Println("Price :", book.Price)
+	}
+	
+}

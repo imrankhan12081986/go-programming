@@ -1,0 +1,27 @@
+Rectangle.go
+=>
+
+package rectangle
+
+func Area(length, width float64) float64 {
+    return length * width
+}
+
+==========================================================
+main. go
+=>
+
+package
+package main
+
+import (
+    "fmt"
+    "your_package_path/rectangle" 
+)
+
+func main() {
+    length := 5.0
+    width := 3.0
+    area := rectangle.Area(length, width) 
+    fmt.Println("Area of rectangle:", area)
+}
